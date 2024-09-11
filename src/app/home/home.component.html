@@ -1,0 +1,24 @@
+<main class="main">
+  <section class="hero">
+    <h1 class="title">Live Streaming</h1>
+    <h3 class="subtitle">
+      by
+      <a class="subtitle-link" href="http://github.com/andersonzero0"
+        >&#64;andersonzero0</a
+      >
+    </h3>
+  </section>
+
+  @if (loading()) {
+  <p>Loading...</p>
+  } @else if (loading() && !user()) {
+  <p>Error!!!</p>
+  } @else if (!user()?.streaming) {
+  <div class="box-stream-offline">
+    <img src="./stream-offline.gif" alt="" />
+    <p class="text-stream-offline">Stream is offline 😢</p>
+  </div>
+  } @else {
+  <p>Online</p>
+  }
+</main>
