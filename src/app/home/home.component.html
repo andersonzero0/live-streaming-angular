@@ -9,16 +9,24 @@
     </h3>
   </section>
 
-  @if (loading()) {
+  @if (loading()) {]
+
   <p>Loading...</p>
-  } @else if (loading() && !user()) {
+
+  } @else if (!loading() && !user()) {
+
   <p>Error!!!</p>
+
   } @else if (!user()?.streaming) {
+
   <div class="box-stream-offline">
     <img src="./stream-offline.gif" alt="" />
     <p class="text-stream-offline">Stream is offline 😢</p>
   </div>
+
   } @else {
-  <p>Online</p>
+
+  <app-player></app-player>
+
   }
 </main>

@@ -1,3 +1,4 @@
+import { PlayerComponent } from '../player/player.component';
 import { HomeService } from './home.service';
 import { Component, OnInit, signal } from '@angular/core';
 
@@ -10,7 +11,7 @@ export type User = {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [PlayerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

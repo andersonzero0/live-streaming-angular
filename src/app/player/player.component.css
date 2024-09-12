@@ -1,0 +1,3 @@
+.video-js.vjs-has-started .vjs-tech {
+  pointer-events: none;
+}
