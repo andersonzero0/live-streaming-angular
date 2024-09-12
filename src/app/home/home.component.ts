@@ -1,38 +1,11 @@
+import { SidebarComponent } from './../sidebar/sidebar.component';
 import { PlayerComponent } from '../player/player.component';
-import { HomeService } from './home.service';
-import { Component, OnInit, signal } from '@angular/core';
-
-export type User = {
-  id: string;
-  username: string;
-  streaming: boolean;
-};
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PlayerComponent],
+  imports: [SidebarComponent, PlayerComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
 })
-export class HomeComponent implements OnInit {
-  constructor(private homeService: HomeService) {}
-
-  loading = signal(true);
-  user = signal<User | null>(null);
-
-  ngOnInit(): void {
-    this.homeService.getUserData().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.user.set(data);
-      },
-      error: (error) => {
-        console.error(error);
-      },
-      complete: () => {
-        this.loading.set(false);
-      },
-    });
-  }
-}
+export class HomeComponent {}

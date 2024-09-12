@@ -1,17 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-:root {
-  --primary-color: #04d939;
-  --secondary-color: #03a63c;
-
-  --background-color: #191818;
-  --text-color: #fff;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
 }
