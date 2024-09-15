@@ -1,0 +1,23 @@
+<nav
+  class="bg-neutral-800 w-52 h-full p-1 flex flex-col gap-2 overflow-auto divide-y-4 divide-neutral-700"
+>
+  <header>
+    <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <h1
+        class="text-3xl font-bold bg-gradient-to-r w-full text-center from-green-500 to-indigo-600 text-transparent bg-clip-text inline-block"
+      >
+        DEV STREAM
+      </h1>
+    </a>
+  </header>
+
+  <div class="pt-4">
+    @for (user of users; track $index) {
+    <app-item-user-sidebar
+      [id]="user.id"
+      [username]="user.username"
+      [streaming]="user.streaming"
+    ></app-item-user-sidebar>
+    }
+  </div>
+</nav>

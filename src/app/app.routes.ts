@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { UserStreamComponent } from './user-stream/user-stream.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserStreamComponent } from './components/user-stream/user-stream.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

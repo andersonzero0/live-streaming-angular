@@ -8,5 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './item-user-sidebar.component.html',
 })
 export class ItemUserSidebarComponent {
+  @Input({ required: true }) id: string = '';
   @Input({ required: true }) username: string = '';
+  @Input({ required: true }) streaming: boolean = false;
 }
