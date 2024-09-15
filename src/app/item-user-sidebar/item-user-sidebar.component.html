@@ -1,0 +1,17 @@
+<a
+  routerLink="/{{ username }}"
+  routerLinkActive="active"
+  ariaCurrentWhenActive="page"
+>
+  <div
+    class="w-full flex flex-row justify-start items-center gap-2 hover:bg-neutral-700 p-2 cursor-pointer rounded-md"
+  >
+    <img
+      class="w-10 rounded-full"
+      src="https://github.com/{{ username }}.png"
+      alt=""
+    />
+    <h1 class="text-white">{{ username }}</h1>
+    <div class="w-2 aspect-square bg-green-500 rounded-full"></div>
+  </div>
+</a>
