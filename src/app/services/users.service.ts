@@ -18,7 +18,7 @@ export class UsersService {
     return this.httpClient.get<User[]>('http://localhost:3000/users');
   }
 
-  async getUser(username: string): Promise<Observable<User>> {
+  getUser(username: string): Observable<User> {
     return this.httpClient.get<User>(`http://localhost:3000/users/${username}`);
   }
 }

@@ -2,11 +2,13 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  Input,
   OnDestroy,
   ViewChild,
 } from '@angular/core';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+import { User } from '../../services/users.service';
 
 @Component({
   selector: 'app-player',
@@ -18,6 +20,8 @@ export class PlayerComponent implements AfterViewInit, OnDestroy {
   @ViewChild('target')
   videoPlayer!: ElementRef;
 
+  @Input({ required: true }) user: User | null = null;
+
   player: any;
 
   constructor(private elementRef: ElementRef) {}
@@ -25,7 +29,7 @@ export class PlayerComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     const player = videojs(this.videoPlayer.nativeElement, {
       controls: true,
-      autoplay: true,
+      //autoplay: true,
       preload: 'auto',
       liveui: true,
       controlBar: {

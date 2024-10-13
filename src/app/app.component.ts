@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LucideAngularModule, Home } from 'lucide-angular';
 
 @Component({
   selector: 'app-root',

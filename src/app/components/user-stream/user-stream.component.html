@@ -1,5 +1,36 @@
-<section class="h-full text-white flex flex-col justify-start items-center p-4">
+<section
+  class="h-full text-white flex flex-col justify-center items-center p-4"
+>
   <div>
-    <p>Username</p>
+    @if (loading) {
+    <p>Loading...</p>
+    } @else if (error) {
+    <p>Error</p>
+    } @else {
+
+    <section class="flex flex-col items-center gap-4">
+      <div class="flex flex-col items-center gap-2">
+        <p>
+          {{ user?.username }}
+        </p>
+        <div
+          [class]="
+            (user?.streaming ? 'bg-green-500' : 'bg-red-500') +
+            ' flex flex-row gap-2 justify-center items-center p-1'
+          "
+        >
+          <lucide-icon name="podcast" class="my-icon"></lucide-icon>
+          <p>@if (user?.streaming) {online} @else {offline}</p>
+        </div>
+      </div>
+
+      @if (user?.streaming) {
+      <div class="w-96 aspect-video">
+        <app-player [user]="user" />
+      </div>
+      }
+    </section>
+
+    }
   </div>
 </section>
