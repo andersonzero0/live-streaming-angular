@@ -4,14 +4,14 @@
   ariaCurrentWhenActive="page"
 >
   <div
-    class="w-full flex flex-row justify-start items-center gap-2 hover:bg-neutral-700 p-2 cursor-pointer rounded-md"
+    class="w-full flex flex-row justify-start items-center gap-2 p-2 cursor-pointer rounded-2xl hover:outline hover:outline-stone-200 hover:shadow-lg shadow-black"
   >
     <img
-      class="w-10 rounded-full"
+      class="w-8 rounded-full"
       src="https://github.com/{{ username }}.png"
       alt=""
     />
-    <h1 class="text-white">{{ username }}</h1>
+    <h1>{{ username }}</h1>
     <div
       [class]="
         (streaming ? 'bg-green-500' : 'bg-gray-500') + ' w-2 h-2 rounded-full'

@@ -1,14 +1,53 @@
 <section class="h-full flex justify-center items-center flex-col">
   <div class="flex flex-col justify-center items-center gap-4">
-    <h1
-      class="text-5xl font-bold bg-gradient-to-r from-green-500 to-indigo-600 text-transparent bg-clip-text inline-block"
-    >
-      DEV STREAM
-    </h1>
-    <!-- <p class="text-white text-center">
-      Welcome to the Dev Stream! This is a place where you can learn about
-      <br />
-      different technologies and how to use them.
-    </p> -->
+    <img
+      class="w-44 rounded-3xl shadow-2xl shadow-stone-500"
+      src="./logo.png"
+      alt=""
+    />
+    <p class="text-3xl text-center">
+      Olá, bem-vindo(a) ao <br /><strong>StreamGuin</strong>!
+    </p>
+    <p class="text-stone-500">
+      Desenvolvido por
+      <brn-hover-card>
+        <strong
+          class="hover:underline-offset-4 hover:underline space-x-3 cursor-pointer"
+          brnHoverCardTrigger
+          >&#64;Anderson Viana</strong
+        >
+        <hlm-hover-card-content *brnHoverCardContent>
+          <div class="flex justify-between flex-col gap-4">
+            <div class="flex flex-col gap-1 justify-center items-center">
+              <hlm-avatar variant="large" id="avatar-small">
+                <img
+                  src="https://github.com/andersonzero0.png"
+                  alt="AnalogLogo"
+                  hlmAvatarImage
+                />
+                <span class="text-red-800 bg-red-600" hlmAvatarFallback
+                  >AN</span
+                >
+              </hlm-avatar>
+              <p class="text-sm">Desenvolvedor de Software</p>
+            </div>
+
+            <div class="space-y-1">
+              <div class="flex items-center pt-2">
+                <hlm-icon name="lucideGithub" class="w-4 h-4 mr-1 opacity-70" />
+                <span class="text-sm text-muted-foreground">GitHub</span>
+              </div>
+              <div class="flex items-center pt-2">
+                <hlm-icon
+                  name="lucideLinkedin"
+                  class="w-4 h-4 mr-1 opacity-70"
+                />
+                <span class="text-sm text-muted-foreground">Linkedin</span>
+              </div>
+            </div>
+          </div>
+        </hlm-hover-card-content>
+      </brn-hover-card>
+    </p>
   </div>
 </section>

@@ -1,17 +1,14 @@
-<nav
-  class="bg-neutral-800 w-56 h-full p-1 flex flex-col gap-2 overflow-auto divide-y-4 divide-neutral-700"
->
-  <header>
+<nav class="bg-stone-100 w-56 h-full p-1 flex flex-col gap-2 overflow-auto">
+  <header class="px-2">
     <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
-      <h1
-        class="text-3xl font-bold bg-gradient-to-r w-full text-center from-green-500 to-indigo-600 text-transparent bg-clip-text inline-block"
-      >
-        DEV STREAM
-      </h1>
+      <div class="flex flex-row p-2 justify-start items-center gap-3">
+        <img class="rounded-xl w-10" src="./logo.png" alt="" />
+        <h2 class="font-bold text-stone-600 text-lg">StreamGuin</h2>
+      </div>
     </a>
   </header>
 
-  <div class="pt-4">
+  <div class="px-2">
     @for (user of users; track $index) {
     <app-item-user-sidebar
       [id]="user.id"

@@ -1,36 +1,39 @@
 <section
-  class="h-full text-white flex flex-col justify-center items-center p-4"
+  class="h-full flex flex-col justify-start items-center p-4 gap-4 overflow-auto"
 >
-  <div>
+  <div class="w-full">
     @if (loading) {
     <p>Loading...</p>
     } @else if (error) {
     <p>Error</p>
     } @else {
 
-    <section class="flex flex-col items-center gap-4">
-      <div class="flex flex-col items-center gap-2">
-        <p>
-          {{ user?.username }}
-        </p>
-        <div
-          [class]="
-            (user?.streaming ? 'bg-green-500' : 'bg-red-500') +
-            ' flex flex-row gap-2 justify-center items-center p-1'
-          "
-        >
-          <lucide-icon name="podcast" class="my-icon"></lucide-icon>
-          <p>@if (user?.streaming) {online} @else {offline}</p>
-        </div>
+    <section class="flex flex-col items-end gap-6 w-full relative">
+      <div
+        class="absolute flex flex-row items-center gap-2 bg-stone-100 p-1 m-4 rounded-full z-10"
+      >
+        <hlm-avatar class="w-16 h-16 rounded-full" [variant]="'large'">
+          <img
+            #avatarImage
+            src="https://github.com/{{ user?.username }}.png"
+            alt="spartan logo. Resembling a spartanic shield"
+            hlmAvatarImage
+            (load)="extractDominantColor()"
+          />
+          <span class="text-white bg-stone-900" hlmAvatarFallback>AV</span>
+        </hlm-avatar>
       </div>
 
-      @if (user?.streaming) {
-      <div class="w-96 aspect-video">
+      @if (!user?.streaming) {
+      <div class="w-full aspect-video">
         <app-player [user]="user" />
+      </div>
+      } @else {
+      <div class="w-full flex flex-col justify-center items-center">
+        <div class="w-full aspect-video dark bg-stone-300"></div>
       </div>
       }
     </section>
-
     }
   </div>
 </section>
