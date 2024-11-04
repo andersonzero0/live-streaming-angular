@@ -9,8 +9,18 @@
     } @else {
 
     <section class="flex flex-col items-start gap-6 w-full relative">
+      @if (user?.streaming) {
+      <div class="w-full aspect-video">
+        <app-player [user]="user" />
+      </div>
+      } @else {
+      <div class="w-full flex flex-col justify-center items-center">
+        <div class="w-full aspect-video dark bg-stone-300"></div>
+      </div>
+      }
+
       <div class="flex flex-row items-center gap-2 rounded-full z-10">
-        <hlm-avatar class="w-16 h-16 rounded-full" [variant]="'large'">
+        <hlm-avatar class="rounded-2xl" [variant]="'medium'">
           <img
             #avatarImage
             src="https://github.com/{{ user?.username }}.png"
@@ -20,17 +30,8 @@
           />
           <span class="text-white bg-stone-900" hlmAvatarFallback>AV</span>
         </hlm-avatar>
+        <p>{{ user?.username }}</p>
       </div>
-
-      @if (!user?.streaming) {
-      <div class="w-full aspect-video">
-        <app-player [user]="user" />
-      </div>
-      } @else {
-      <div class="w-full flex flex-col justify-center items-center">
-        <div class="w-full aspect-video dark bg-stone-300"></div>
-      </div>
-      }
     </section>
     }
   </div>

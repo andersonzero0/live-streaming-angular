@@ -4,10 +4,10 @@ import {
   ElementRef,
   Input,
   OnDestroy,
+  OnInit,
   ViewChild,
 } from '@angular/core';
 import videojs from 'video.js';
-import 'video.js/dist/video-js.css';
 import { User } from '../../services/users.service';
 
 @Component({
@@ -16,8 +16,8 @@ import { User } from '../../services/users.service';
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.css'],
 })
-export class PlayerComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('target')
+export class PlayerComponent implements OnInit, OnDestroy {
+  @ViewChild('target', { static: true })
   videoPlayer!: ElementRef;
 
   @Input({ required: true }) user: User | null = null;
@@ -26,7 +26,7 @@ export class PlayerComponent implements AfterViewInit, OnDestroy {
 
   constructor(private elementRef: ElementRef) {}
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     const player = videojs(this.videoPlayer.nativeElement, {
       controls: true,
       //autoplay: true,
