@@ -15,7 +15,13 @@
       </div>
       } @else {
       <div class="w-full flex flex-col justify-center items-center">
-        <div class="w-full aspect-video dark bg-stone-300"></div>
+        <div
+          class="w-full flex justify-center items-center aspect-video dark bg-gradient-to-l to-sky-800 via-sky-500 from-indigo-500"
+        >
+          <p class="text-white font-mono text-2xl">
+            usuário não está transmitindo
+          </p>
+        </div>
       </div>
       }
 
@@ -31,6 +37,12 @@
           <span class="text-white bg-stone-900" hlmAvatarFallback>AV</span>
         </hlm-avatar>
         <p>{{ user?.username }}</p>
+        <div
+          [class]="
+            (user?.streaming ? 'bg-green-500' : 'bg-gray-500') +
+            ' w-2 h-2 rounded-full'
+          "
+        ></div>
       </div>
     </section>
     }
