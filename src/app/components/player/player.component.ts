@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import videojs from 'video.js';
 import { User } from '../../services/users.service';
+//import '@videojs/http-streaming'; 
 
 @Component({
   selector: 'app-player',
@@ -31,6 +32,11 @@ export class PlayerComponent implements OnInit, OnDestroy {
       controls: true,
       //autoplay: true,
       preload: 'auto',
+      // html5: {
+      //   vhs: {
+      //     withCredentials: false
+      //   }
+      // },    
       liveui: true,
       controlBar: {
         volumePanel: true,
