@@ -21,7 +21,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
   @ViewChild('target', { static: true })
   videoPlayer!: ElementRef;
 
-  @Input({ required: true }) user: User | null = null;
+  @Input({ required: true }) user!: User;
 
   player: any;
 
@@ -53,7 +53,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
         tap: false,
       },
       sources: {
-        src: 'http://localhost:3000/stream/andersonzero0/',
+        src: `http://localhost:3000/stream/${this.user?.username}/`,
         type: 'application/x-mpegURL',
       },
     });
