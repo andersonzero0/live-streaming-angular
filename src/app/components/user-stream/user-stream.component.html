@@ -11,7 +11,9 @@
     <section class="flex flex-col items-start gap-6 w-full relative">
       @if (user?.streaming) {
       <div class="w-full aspect-video">
+        @if(user) {
         <app-player [user]="user" />
+        }
       </div>
       } @else {
       <div class="w-full flex flex-col justify-center items-center">
